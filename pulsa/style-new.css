@@ -1,0 +1,453 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+body,
+input {
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	margin: 0;
+	height: 100vh;
+	background-color: #f3f3f3;
+	overflow: hidden;
+}
+
+header {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 10;
+	background-color: #fff;
+}
+
+.container {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.provider-content {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	margin: 30px 0 0 10px;
+	position: absolute;
+	z-index: 1;
+}
+
+.img-provider {
+	width: 36px;
+	border-radius: 13px;
+}
+
+.nama-provider {
+	font-weight: 600;
+	font-size: 15px;
+	color: #000;
+}
+
+.img-header {
+	width: 100%;
+	opacity: 0.7;
+}
+
+.form-nomor-telepon {
+	display: flex;
+	flex-direction: column;
+	row-gap: 4px;
+	position: relative;
+	padding-bottom: 14px;
+	overflow: hidden;
+}
+
+.form-input {
+	margin: 10px 10px 0;
+}
+
+.text-nomor-telepon {
+	font-size: 11.5px;
+	color: #130e0e;
+	opacity: 0.7;
+	display: block;
+	margin: -1px 0 0 3px;
+}
+
+.input-nomor-telepon {
+	padding: 15px 15px 15px 15px;
+	font-weight: 500;
+	font-size: 15px;
+	border-radius: 8px;
+	background-color: rgba(226, 215, 250, 0.6);
+	border: none;
+	width: 100%;
+}
+
+.input-nomor-telepon:focus {
+	outline: none;
+}
+
+.wrapper-input-notelp {
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding-bottom: 28px;
+}
+
+.clear-input {
+	cursor: pointer;
+	position: absolute;
+	fill: #7b7b7b;
+	right: 12px;
+}
+
+.clear-input.hidden {
+	display: none;
+}
+
+.wrapper-tab {
+	margin-top: 5px;
+	display: none;
+}
+
+.tab {
+	font-size: 14px;
+	text-decoration: none;
+	font-weight: 600;
+	display: block;
+	width: 50%;
+	padding: 16px 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 200ms ease-in-out;
+	color: #8d8d8d;
+	border-bottom: 2px solid transparent;
+}
+
+.tab.tab-active {
+	color: #8a09e0;
+	border-color: #8a09e0;
+}
+
+.tab:hover {
+	background-color: #e9e9e9;
+}
+
+.wrapper-pembelian {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.wrapper-isi-pulsa,
+.wrapper-paket-data {
+	display: grid;
+	gap: 16px;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.card-pembelian {
+	position: relative;
+	text-decoration: none;
+	background-color: #fff;
+	display: block;
+	border-radius: 8px;
+	padding: 8px;
+	color: #130e0e;
+}
+
+.pulsa {
+	margin-top: 0;
+	margin-bottom: 8px;
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.text-harga {
+	font-size: 12px;
+	color: #626262;
+}
+
+.harga {
+	margin: 0;
+	font-weight: 600;
+	margin-top: 2px;
+	font-size: 12px;
+	color: #000;
+}
+
+.harga-coret {
+	font-weight: 400;
+	margin-left: 4px;
+	text-decoration: line-through;
+}
+
+.harga--discount {
+	color: #ef4444;
+}
+
+.icon-discount {
+	fill: #ef4444;
+	width: 24px;
+	position: absolute;
+	right: 8px;
+}
+
+.pembelian-hidden {
+	display: none;
+}
+
+.wrapper-paket-data {
+	grid-template-columns: 1fr;
+}
+
+.card-pembelian--paket-data {
+	background-color: #fff;
+	padding: 16px;
+	font-size: 12px;
+}
+
+.header-paket-data {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-weight: 600;
+}
+
+.nama-paket-data {
+	margin: 0;
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+}
+
+.lihat-detail {
+	color: rgb(25, 183, 231);
+	white-space: nowrap;
+}
+
+.deskripsi-paket {
+	color: rgb(109, 109, 109);
+	overflow: hidden;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	line-height: 20px;
+}
+
+.harga-paket {
+	font-size: 14px;
+}
+
+.popup-konfirmasi-pembelian {
+	position: fixed;
+	z-index: 10;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+	transition: 200ms ease;
+	opacity: 0;
+	transform: scale(0);
+}
+
+.popup-konfirmasi-pembelian.show {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.card-konfirmasi-pembelian {
+	background-color: #fff;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	position: absolute;
+	bottom: -100%;
+	left: 0;
+	right: 0;
+	padding: 20px 14px;
+	color: #212529;
+	transition: 500ms ease-in-out 500ms;
+	z-index: 30;
+}
+
+.card-konfirmasi-pembelian.show {
+	bottom: 0;
+}
+
+.title-konfirmasi-pembelian {
+	text-align: center;
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.text-konfirmasi-pembelian {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 14px;
+}
+
+.text-konfirmasi-pembelian span {
+	color: #575757;
+}
+
+.text-total-pembayaran,
+.text-total-pembayaran span {
+	font-size: 16px;
+	font-weight: 500;
+	color: #130e0e;
+}
+
+.wrapper-btn-konfirmasi-pembelian {
+	margin-top: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 24px;
+}
+
+.btn-konfirmasi-pembelian {
+	font-size: 14px;
+	text-decoration: none;
+	background-color: #2196f3;
+	color: #fff;
+	padding: 8px 24px;
+	border-radius: 6px;
+	transition: 150ms ease-in;
+}
+
+.btn-konfirmasi-pembelian:hover {
+	opacity: 0.7;
+}
+
+.btn-konfirmasi-pembelian--ubah {
+	background-color: transparent;
+	color: #130e0e;
+	border: 1px dashed #130e0e;
+}
+
+.konfirmasi-nominal {
+	margin-left: 24px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+main {
+	margin-top: 262px;
+	height: 100%;
+	background-color: #fff;
+}
+
+.waves {
+	position: absolute;
+	width: 100%;
+	height: 15vh;
+	margin-bottom: -7px; /*Fix for safari gap*/
+	min-height: 100px;
+}
+
+.parallax > use {
+	animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+	animation-delay: -2s;
+	animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+	animation-delay: -3s;
+	animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+	animation-delay: -4s;
+	animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+	animation-delay: -5s;
+	animation-duration: 20s;
+}
+@keyframes move-forever {
+	0% {
+		transform: translate3d(-90px, 0, 0);
+	}
+	100% {
+		transform: translate3d(85px, 0, 0);
+	}
+}
+
+body.active {
+	overflow: visible;
+	height: auto;
+}
+
+body.active .wrapper-tab {
+	display: flex;
+}
+
+body.active main {
+	margin-top: 298px;
+	background-color: #f3f3f3;
+	height: auto;
+}
+
+body.active .data-kosong {
+	display: none;
+}
+
+.transaksi {
+	width: 32px;
+}
+
+.nomor-kosong,
+.transaksi-dulu {
+	margin: 0;
+	font-size: 14px;
+}
+
+.data-kosong {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.nomor-kosong {
+	font-weight: 600;
+	margin-bottom: 2px;
+	color: #262626;
+}
+
+.transaksi-dulu {
+	font-size: 12px;
+	color: #7a7a7a;
+}
+
+.minim-nohp {
+	color: rgb(255, 29, 29);
+	font-size: 12px;
+	position: absolute;
+	bottom: 0;
+	visibility: hidden;
+}
+.minim-nohp.show {
+	visibility: visible;
+}
+
+.pakai-nomor {
+	color: #8a09e0;
+	font-weight: 600;
+	font-size: 12px;
+}
